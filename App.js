@@ -191,9 +191,22 @@ root.render(parent);
 
 const heading = React.createElement("h1", {"id" : "heading"}, "This is theflashyash");
 // we have create a element 
-// to show it in the DOM we need to create a DOM
+// to show it in the browser we need to select the a DOM to show it in the browser.
+
+// JSX => Babel transpiles it to React.createElement => ReactElement -JS Object => HTMLElement(render);
+
+const Jsxheading = () => ( <> 
+<h1 id="heading" tabIndex={"1"}> Namaste React using JSX</h1>
+ </>); // component 1
+
+const Title = () => (  // making component composition.
+  <> 
+   <h1 className="heading"> Hello Yash</h1>
+  <Jsxheading/> 
+  </>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // now we need to render this to show the things on the internet.
 
-root.render(heading);
+root.render(<Title/>);
