@@ -195,14 +195,19 @@ const heading = React.createElement("h1", {"id" : "heading"}, "This is theflashy
 
 // JSX => Babel transpiles it to React.createElement => ReactElement -JS Object => HTMLElement(render);
 
-const Jsxheading = () => ( <> 
+const Jsxheading = () => ( <>   
 <h1 id="heading" tabIndex={"1"}> Namaste React using JSX</h1>
  </>); // component 1
+
+ const jsxheading = (   // react ELement
+  <h1>Namaste JI</h1> 
+ );
 
 const Title = () => (  // making component composition.
   <> 
    <h1 className="heading"> Hello Yash</h1>
-  <Jsxheading/> 
+  {Jsxheading()}
+  {jsxheading}
   </>
 );
 
